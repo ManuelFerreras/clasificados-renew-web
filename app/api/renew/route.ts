@@ -1,3 +1,4 @@
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
 import fetch from "node-fetch";
 import { NextResponse } from "next/server";
 import * as xlsx from "node-xlsx";
