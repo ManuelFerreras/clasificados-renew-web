@@ -17,6 +17,7 @@
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "node-fetch": "^2.7.0",
+    "node-xlsx": "^0.24.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.3.0",
