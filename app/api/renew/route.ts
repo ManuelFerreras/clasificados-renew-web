@@ -33,6 +33,7 @@ export async function POST(request: Request) {
 
     for (let i = 0; i < sheets.length; i++) {
       const sheet = workbook.find(s => s.name === sheets[i]);
+      const promises = [];
       if (sheet) {
         const rows = sheet.data;
         console.log(rows.length);
@@ -41,9 +42,11 @@ export async function POST(request: Request) {
           const id = row[0]; // assuming ID is in the first column
           console.log(id);
           const url = `https://adminclasificados.lavoz.com.ar/republicacion-individual-aviso/${id}/107172`;
-          const resp = await fetch(url);
-          console.log(resp);
+          // const resp = await fetch(url);
+          promises.push(fetch(url));
         }
+
+        await Promise.all(promises);
       }
     }
 
